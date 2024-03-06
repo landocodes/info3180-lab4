@@ -75,6 +75,13 @@ def login():
     return render_template("login.html", form=form)
 
 
+@app.route('/logout')
+def logout():
+    logout_user()
+    flash('You have been logged out successfully.', 'success')
+    return redirect(url_for('home'))
+
+
 def get_uploaded_images():
     # Assuming 'uploads' is your upload folder name
     upload_folder = app.config['UPLOAD_FOLDER']

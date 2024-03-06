@@ -21,16 +21,23 @@ body {
 
 .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    /* Three columns with a minimum width of 100px */
     grid-gap: 20px;
+    /* Gap between grid items */
 }
 
 .image-item {
     overflow: hidden;
+    /* Ensure images do not overflow their containers */
 }
 
 .image-item img {
     width: 100%;
-    height: 100%;
+    /* Make images fill the container width */
+    height: 500px;
+    /* Maintain aspect ratio */
     object-fit: cover;
+    
+    /* Cover the container with the image, maintaining aspect ratio */
 }
